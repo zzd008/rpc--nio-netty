@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+       
+      <!-- 扫描这个包下加了@Component注解的类，这样就不用写好多bean了，如果没加注解就要写<bean>标签来指明 -->
+    <context:component-scan base-package="cn.jxust_04_springannotation.springrunorder"/>
+       
+     <!-- 指定id，类的路径，构造函数的参数和值 如果没指定，默认调用无参构造函数 -->
+    <bean id="one" class="cn.jxust_04_springannotation.springrunorder.One">
+        <constructor-arg name="one" value="one"/>
+    </bean>
+    
+    <bean id="two" class="cn.jxust_04_springannotation.springrunorder.Two">
+        <constructor-arg name="two" value="two" />
+    </bean>
+
+</beans>
